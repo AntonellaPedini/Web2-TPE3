@@ -2,9 +2,27 @@
 
 API REST que expone los recursos del proyecto "Galería de Arte" para permitir su integración con sistemas de terceros. Comparte la base de datos con la primera entrega del trabajo.
 
-## URL base
+## Pasos para consumir la API
+1. Cloná el repositorio en la carpeta htdocs de Xampp
+2. Iniciá, desde Xampp, Apache y MySQL
+3. Utilizá cualquier plataforma/herramienta para probar los endpoints (por ejemplo Postman). 
+
+### URL base
 
 http://localhost/web2/GaleriaDeArte_P3/api
+
+## Autenticación | Uso del JWT
+
+Para realizar modificaciones se requiere un token. Para obtener este token se deben seguir los siguientes pasos:
+En Postman (o similar): accede a http://localhost/web2/GaleriaDeArte_P3/api/login (con método POST).
+En el body ingresá el siguiente formato con los datos:
+
+{
+    "email" : "webadmin@admin.com",
+    "password" : "admin"
+}
+
+Esto te va a devolver una respuesta de tipo {"token": "..."}. Copia el token y arma un pedido nuevo accediendo a: http://localhost/web2/GaleriaDeArte_P3/api/obras (con métodos POST o PUT). En la pestaña Authorization, selecciona "Bearer Token" y pegá el token. Esto te va a permitir hacer modificaciones por el lapso de 1 hora (duración del token). 
 
 ## Formato de respuesta
 
@@ -103,13 +121,3 @@ DELETE /obras/:id
 
 DELETE /obras/15
 
-## Uso del JWT
-
-Para realizar modificaciones se requiere un token. Para obtener este token se deben seguir los siguientes pasos:
-En Postman (o similar): accede a http://localhost/web2/GaleriaDeArte_P3/api/login (con método POST).
-En el body ingresá el siguiente formato con los datos:
-{
-    "email" : "webadmin@admin.com",
-    "password" : "admin"
-}
-Esto te va a devolver una respuesta de tipo {"token": "..."}. Copia el token y arma un pedido nuevo accediendo a: http://localhost/web2/GaleriaDeArte_P3/api/obras (con métodos POST o PUT). En la pestaña Authorization, selecciona "Bearer Token" y pegá el token. Esto te va a permitir hacer modificaciones por el lapso de 1 hora (duración del token). 
