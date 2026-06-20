@@ -30,10 +30,10 @@ Todas las respuestas se devuelven en formato `JSON`. Los recursos de error devue
 
 ## Códigos de respuesta utilizados
 
-200 OK:  La operación se realizó con éxito (lectura, actualización, eliminación) 
-201 Created: Se creó un nuevo recurso correctamente (POST) 
-400 Bad Request:  Faltan datos obligatorios o un parámetro enviado es inválido 
-404 Not Found: El recurso solicitado no existe, o la ruta pedida no coincide con ningún endpoint 
+- 200 OK:  La operación se realizó con éxito (lectura, actualización, eliminación) 
+- 201 Created: Se creó un nuevo recurso correctamente (POST) 
+- 400 Bad Request:  Faltan datos obligatorios o un parámetro enviado es inválido 
+- 404 Not Found: El recurso solicitado no existe, o la ruta pedida no coincide con ningún endpoint 
 
 ## Recurso: Obras
 
